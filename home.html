@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Zwallet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<style>
+    body {
+        background-color: #FAFCFF;
+    }
+    .navbar {
+        background-color: white;
+    }
+    .navbar .wrapper {
+        display: flex;
+        align-items: center;
+    }
+    .navbar-column {
+        flex: 50%;
+    }
+    .navbar-column.right {
+        justify-content: flex-end;
+        display: flex;
+    }
+    .navbar-column.left {
+        justify-content: flex-start;
+        display: flex;
+    }
+    .navbar-user-info {
+        margin-left: 15px;
+    }
+
+    .icon-notification {
+        margin-left: 50px;
+    }
+    .main-wrapper {
+        display: flex;
+        padding: 50px 0;
+    }
+    .sidebar-menu {
+        flex: 30%;
+        height: 65vh;
+        padding: 15px;
+    }
+    .box-sidebar {
+        height: 100%;
+    }
+    .main-content {
+        flex: 70%;
+        height: 65vh;
+    }
+    .box {
+        background: #FFFFFF;
+        border-radius: 25px;
+        height: 100%;
+    }
+    .main-balance-wrapper {
+        padding: 15px;
+        height: 30%;
+    }
+    .box-balance {
+        background-color: #6379F4;
+        height: 100%;
+    }
+    .main-transaction {
+        height: 70%;
+        display: flex;
+    }
+    .main-transaction-wrapper{
+        flex: 50%;
+        padding: 15px;
+        height: 100%;
+    }
+
+    .box-charts {
+        background-color: #fff;
+    }
+    .box-history {
+        background-color: #fff;
+    }
+</style>
+<body>
+    <nav class="navbar shadow">
+        <div class="wrapper">
+            <div class="navbar-column left" >
+                <h1 class="brand text-primary">Zwallet</h1>
+            </div>
+            <div class="navbar-column right">
+                <img src="./images/pp.svg" width="52" height="52" />
+                <div class="navbar-user-info">
+                    <div class="fw-bold">
+                        Robert Chandler
+                    </div>
+                    <span class="fw-light">
+                        +62 8139 3877 7946
+                    </span>
+                </div>
+                <img class="icon-notification" src='./images/icons/mail.svg' />
+            </div>
+        </div>
+    </nav>
+    <section class="wrapper main-wrapper">
+        <aside class="sidebar-menu">
+            <div class="box shadow box-sidebar"></div>
+        </aside>
+        <div class="main-content">
+            <div class="main-balance-wrapper">
+                <div class="box shadow box-balance"></div>
+            </div>
+            <div class="main-transaction">
+                <div class="main-transaction-wrapper">
+                    <div class="box shadow box-charts"></div>
+                </div>
+                <div class="main-transaction-wrapper">
+                    <div class="box shadow box-history"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,57 @@
+*{
+    font-family: Nunito Sans;
+}
+
+body {
+    margin: 0;
+}
+/* global css */
+.align-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-white {
+    color: white!important;
+}
+.fw-bold {
+    font-weight: bold;
+}
+.fw-light {
+    font-weight: lighter;
+}
+.text-primary {
+    color: #6379F4!important;
+}
+.float-right {
+    float: right;
+}
+.btn {
+    width: 100%;
+    outline: 0;
+    border: 0;
+    border-radius: 12px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #6379F4;
+}
+.brand {
+    font-family: Nunito Sans;
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 40px;
+
+}
+.wrapper {
+    width: 75%;
+    margin: 0 auto;
+}
+.shadow {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+/* */
