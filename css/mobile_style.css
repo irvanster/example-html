@@ -1,0 +1,45 @@
+@media screen and (max-width: 1024px) {
+
+/* 
+max-width: dari 0 sampai: 600px (dibawah 600 itu ngefek, diatas 600 itu ga ngefek)
+min-width: dari screen layar sampai mentok 600px (dibawah 600 itu ga ngefek, diatas 600 itu baru ngefek)
+*/
+/* jika pada saat max width nya 600px,auth-cover bagian left kita display none; */
+/* jika screen dibawah 600 px maka dislay non untuk auth-cover.left */
+/* jika screen dengan max width diatas 600 pixel, maka akan mengambil property default (diatasnya), jika dibawahnya maka ya ini: */
+.container {
+    background-color: #FAFCFF;
+    display: block;
+    overflow: hidden;
+}
+.auth-cover, .auth-cover-inner {
+    width: 100%;
+
+}
+.auth-cover {
+    padding-top: 5px;
+    background: #fff;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    box-shadow: 0px 0px 75px rgba(155, 155, 155, 0.15);
+}
+.auth-cover-inner.right {
+    margin: 0px;
+}
+.auth-cover.left, .text-title, .text-subtitle {
+    display: none;
+}
+.text-title-mobile, .text-subtitle-mobile {
+    display: block;
+}
+.brand-mobile {
+    display: block;
+    padding: 40px 0;
+}
+
+.form-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+}

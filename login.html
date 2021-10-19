@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- wajib untuk responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- end wajib untuk responsive -->
     <title>Login</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/mobile_style.css">
 </head>
 
 <style>
@@ -124,12 +127,48 @@
         margin-top: 90px;
         margin-bottom: 40px;
     }
+    .text-title-mobile, .text-subtitle-mobile, .brand-mobile {
+        display: none;
+    }
 
 
+    @media screen and (min-width: 1024px) {
+        .auth-cover-app {
+            width: 30vw;
+        }
+        .container {
+            height: 100%;
+        }
+        .auth-cover-inner {
+            margin: 0 auto;
+            height: 110vh;
+        }
+        .auth-cover-inner.right {
+            margin: 0px auto;
+        }
 
-</style>
+    }
+    @media screen and (min-width: 1366px) {
+        body {
+            overflow: hidden;
+        }
+        .auth-cover-inner {
+            margin: 0 auto;
+            height: 100vh;
+        }
+        .auth-cover-inner.right {
+            margin: 0 auto;
+            margin-top: 10vh;
+        }
+
+    }
+    
+    </style>
 <body>
     <div class="container">
+        <div class="brand-mobile">
+            <h1 class="brand text-primary text-center">Zwallet</h1>
+        </div>
         <div class="auth-cover left">
             <div class="auth-cover-inner">
                 <h1 class="brand text-white">Zwallet</h1>
@@ -149,22 +188,32 @@
                 <h2 class="align-left text-title">Start Accessing Banking Needs
                     With All Devices and All Platforms
                     With 30.000+ Users</h2>
-                <p class="align-left text-subtitle">
-                    Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!
+                    <p class="align-left text-subtitle">
+                        Zwallet is an application that focussing in banking needs for all users
+                        in the world. Always updated and always following world trends.
+                        5000+ users registered in Zwallet everyday with worldwide
+                        users coverage.
+                    </p>
+                <h2 class="text-center text-title text-title-mobile">Login</h2>
+                <p class="text-center text-subtitle text-subtitle-mobile">
+                    Login to your existing account to access<br/>
+                    all the features in Zwallet.
                 </p>
-                <div class="form-input">
-                    <img class="icon" src='./images/icons/mail.svg' />
-                    <input placeholder="Enter your e-mail" type="text" id="email" name="email">
-                </div>
-                <div class="form-input">
-                    <img class="icon" src='./images/icons/lock.svg' />
-                    <input placeholder="Enter your password" type="password" id="password" name="password">
-                    <img class="icon right" src='./images/icons/eye-crossed.svg' />
-                </div>
-                <div class="float-right forgot-link">Forgot Password</div>
-                <button class="btn btn-primary btn-login">
-                    Login
-                </button>
+                <form class="form-wrapper">
+                    <div class="form-input">
+                        <img class="icon" src='./images/icons/mail.svg' />
+                        <input placeholder="Enter your e-mail" type="text" id="email" name="email">
+                    </div>
+                    <div class="form-input">
+                        <img class="icon" src='./images/icons/lock.svg' />
+                        <input placeholder="Enter your password" type="password" id="password" name="password">
+                        <img class="icon right" src='./images/icons/eye-crossed.svg' />
+                    </div>
+                    <div class="float-right forgot-link">Forgot Password</div>
+                    <button class="btn btn-primary btn-login">
+                        Login
+                    </button>
+                </form>
                 <p class="text-center">Don’t have an account? <span class="text-primary">Let’s Sign Up</span></p>
             </div>
         </div>
