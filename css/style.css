@@ -21,11 +21,18 @@ body {
 .fw-light {
     font-weight: lighter;
 }
+
 .text-primary {
     color: #6379F4!important;
 }
+.bg-primary {
+    background-color: #6379F4!important;
+}
 .float-right {
     float: right;
+}
+.text-size-icon {
+    font-size: 50px;
 }
 .btn {
     width: 100%;
