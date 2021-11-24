@@ -50,6 +50,9 @@ const verifyToken = (tokenFromUser)=> {
     let books = [
         {title: 'gatot'},
         {title: 'kaca'},
+        {title: 'cobaaaaa'},
+        {title: 'cobaaaaa'},
+        {title: 'cobaaaaa'},
     ]
     if(tokenFromUser !== '') {
         jwt.verify(tokenFromUser, SECRET_KEY, function(err, decoded) {
