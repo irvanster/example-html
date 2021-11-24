@@ -1,0 +1,23 @@
+{
+  "name": "week9",
+  "version": "1.0.0",
+  "description": "latihan data",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^2.6.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "latihan",
+    "promise",
+    "cb",
+    "async",
+    "async/await"
+  ],
+  "author": "kita",
+  "license": "ISC"
+}
