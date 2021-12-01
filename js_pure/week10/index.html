@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan DOM</title>
+  </head>
+
+  <!-- kita mau ngambil dari data api, terus arrOfOb -->
+  <body>
+    <div id="container">
+      <button id="dataBooks" onclick="fetchBooks()">show books</button>
+      <button
+        id="refetchDataBooks"
+        onmouseenter="handleHover('enter')"
+        onmouseleave="handleHover('leave')"
+      >
+        refetch
+      </button>
+    </div>
+
+    <script type="text/javascript">
+      /**
+       * const, let var, function(){}
+       * penggunaan browser: lama
+       */
+      const books = [
+        { title: "candraginata", year: 2000 },
+        { title: "yuupieee", year: 2002 },
+      ];
+
+      const fetchBooks = () => {
+        console.log(books);
+      };
+      const handleHover = (state) => {
+        //   console.log(state)
+          if(state == 'enter') {
+              document.getElementById("refetchDataBooks").style =
+                "background: red;border:20px solid blue;transition:1s";
+          }else{
+              document.getElementById("refetchDataBooks").style = "transition:1s";
+          }
+
+     }
+
+    //   document
+    //     .getElementById("refetchDataBooks")
+    //     .addEventListener("mouseover", () => {});
+    //   document
+    //     .getElementById("refetchDataBooks")
+    //     .addEventListener("mouseleave", () => {
+    //     });
+
+      //repaint reflow = bikin lama?
+
+      // virtual DOM = react js, diffing altgotihm
+
+      //event  = peristiwa ('click','onomouseover')
+      /** 
+         * 
+            document.getElementById('container').style = 'background: blue;color:#f0f0f0' //inline css
+            // document.getElementById('container').style.backgroundColor = '#929'
+            document.getElementById('container').i= '<h2nnerHTML >cobaaaa</h2>' //bisa menuliskan html
+            // document.getElementById('container').innerText = '<h2>cobaaaa</h2>' //hanya menuliskan text
+         * 
+        */
+    </script>
+  </body>
+</html>
