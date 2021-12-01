@@ -5,6 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Latihan DOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <style>
+        .books-wrapper {
+            flex-direction: row;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /* .card {
+            background: #fff;
+            box-shadow: #0000005e 0px 0 10px 0;
+            padding: 15px;
+            margin: 20px;
+            width: 200px;
+            border-radius: 20px;
+        }
+        .card img {
+            border-radius: 10px;
+            width: 100%;
+        } */
+    </style>
   </head>
 
   <!-- kita mau ngambil dari data api, terus arrOfOb -->
@@ -19,6 +40,13 @@
         refetch
       </button>
     </div>
+    <div id="booksSection" class="books-wrapper">
+        <!-- <div class="card">
+             <img src="https://upload.wikimedia.org/wikipedia/id/thumb/b/bf/Harry_Potter_and_the_Sorcerer%27s_Stone.jpg/150px-Harry_Potter_and_the_Sorcerer%27s_Stone.jpg">
+            <h5>Harry Multer</h5>
+            <div class="card-description">lorem ipsum dolor sit amet.</div>
+        </div> -->
+    </div>
 
     <script type="text/javascript">
       /**
@@ -26,8 +54,9 @@
        * penggunaan browser: lama
        */
       const books = [
-        { title: "candraginata", year: 2000 },
-        { title: "yuupieee", year: 2002 },
+        { title: "Candraginata", year: 2000, image: 'https://upload.wikimedia.org/wikipedia/id/thumb/b/bf/Harry_Potter_and_the_Sorcerer%27s_Stone.jpg/150px-Harry_Potter_and_the_Sorcerer%27s_Stone.jpg', description: 'Lorem Ipsum Dolor sit amet.' },
+        { title: "Yuupieee", year: 2002, image: 'https://upload.wikimedia.org/wikipedia/id/thumb/b/bf/Harry_Potter_and_the_Sorcerer%27s_Stone.jpg/150px-Harry_Potter_and_the_Sorcerer%27s_Stone.jpg', description: 'Lorem Ipsum Dolor sit amet.' },
+        { title: "Harry Multer", year: 2002, image: 'https://upload.wikimedia.org/wikipedia/id/thumb/b/bf/Harry_Potter_and_the_Sorcerer%27s_Stone.jpg/150px-Harry_Potter_and_the_Sorcerer%27s_Stone.jpg', description: 'Lorem Ipsum Dolor sit amet.' },
       ];
 
       const fetchBooks = () => {
@@ -43,6 +72,26 @@
           }
 
      }
+
+     const BooksItem = ({image, title, description})=> {
+        return `<div class="card m-3 p-2 shadow" style="width: 18rem;">
+            <img src=${image} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">${description}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>`         
+     }
+
+     books.map((item)=> {
+         document.getElementById('booksSection').innerHTML += BooksItem(item)
+        //  document.getElementById('booksSection').innerHTML += `<div class="card">
+        //          <img src=${item.image}>
+        //         <h5>${item.title}</h5>
+        //         <div class="card-description">${item.description}</div>
+        //     </div>`
+     })
 
     //   document
     //     .getElementById("refetchDataBooks")
@@ -61,7 +110,7 @@
          * 
             document.getElementById('container').style = 'background: blue;color:#f0f0f0' //inline css
             // document.getElementById('container').style.backgroundColor = '#929'
-            document.getElementById('container').i= '<h2nnerHTML >cobaaaa</h2>' //bisa menuliskan html
+            document.getElementById('container').innerHTML= '<h2nnerHTML >cobaaaa</h2>' //bisa menuliskan html
             // document.getElementById('container').innerText = '<h2>cobaaaa</h2>' //hanya menuliskan text
          * 
         */
