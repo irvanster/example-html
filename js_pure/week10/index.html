@@ -34,11 +34,21 @@
       <button id="dataBooks" onclick="fetchBooks()">show books</button>
       <button
         id="refetchDataBooks"
+        onmouseenter="handleHover(this, 'enter')"
+        onmouseleave="handleHover(this, 'leave')"
+      >
+      <!-- <button
+        id="refetchDataBooks"
         onmouseenter="handleHover('enter')"
         onmouseleave="handleHover('leave')"
-      >
+      > -->
         refetch
       </button>
+    </div>
+    <div class="p-3">
+        <input id="inputTitle" placeholder="input title" class="form-control m-2" onchange="handleInput(this)">
+        <input id="inputYear" placeholder="input year" class="form-control m-2">
+        <button class="btn btn-primary" onclick="handleAddData()">Tambah Data</button>
     </div>
     <div id="booksSection" class="books-wrapper">
         <!-- <div class="card">
@@ -59,19 +69,52 @@
         { title: "Harry Multer", year: 2002, image: 'https://upload.wikimedia.org/wikipedia/id/thumb/b/bf/Harry_Potter_and_the_Sorcerer%27s_Stone.jpg/150px-Harry_Potter_and_the_Sorcerer%27s_Stone.jpg', description: 'Lorem Ipsum Dolor sit amet.' },
       ];
 
+      let tempData = {
+          title: null,
+          year: null,
+          image: 'https://m.media-amazon.com/images/I/410nynxH30L.jpg'
+      }
+      const handleInput = (e)=> {
+        tempData = {
+            ...tempData,
+            title: e.value,
+        }
+        //   console.log(books, 'ini data terbaru dari books')
+        //   document.getElementById('booksSection').innerHTML += BooksItem(tempData)
+      }
+      const handleAddData = ()=> {
+          if(tempData.title == null || tempData.title == '' ) {
+              alert('data tidak boleh kosong')
+          }else {
+              new Promise((resolve) => {
+                  resolve(books.push(tempData))
+              }).then(()=> {
+                  document.getElementById('booksSection').innerHTML += BooksItem(tempData)
+              })
+          }
+      }
       const fetchBooks = () => {
         console.log(books);
       };
-      const handleHover = (state) => {
+      const handleHover = (element, state) => {
         //   console.log(state)
           if(state == 'enter') {
-              document.getElementById("refetchDataBooks").style =
+              element.style =
                 "background: red;border:20px solid blue;transition:1s";
           }else{
-              document.getElementById("refetchDataBooks").style = "transition:1s";
+              element.style = "transition:1s";
           }
-
      }
+    //  const handleHover = (state) => {
+    //     //   console.log(state)
+    //       if(state == 'enter') {
+    //           document.getElementById("refetchDataBooks").style =
+    //             "background: red;border:20px solid blue;transition:1s";
+    //       }else{
+    //           document.getElementById("refetchDataBooks").style = "transition:1s";
+    //       }
+
+    //  }
 
      const BooksItem = ({image, title, description})=> {
         return `<div class="card m-3 p-2 shadow" style="width: 18rem;">
